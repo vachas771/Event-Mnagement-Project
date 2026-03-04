@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Edit Event</h2>
+
+        <!-- Flask/Jinja2 compatible form -->
+        <form method="post">
+            <input type="text" name="title" value="{{ event[1] }}" placeholder="Event Title" required>
+
+            <textarea name="description" placeholder="Event Description">{{ event[2] }}</textarea>
+
+            <input type="date" name="date" value="{{ event[3] }}" required>
+
+            <input type="text" name="venue" value="{{ event[4] }}" placeholder="Venue" required>
+
+            <input type="number" name="price" value="{{ event[5] }}" placeholder="Price" required>
+
+            <button type="submit">Update Event</button>
+        </form>
+    </div>
+</body>
+</html>

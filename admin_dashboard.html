@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <body class="bg-dashboard">
+
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <a href="/admin/events" class="card">Manage Events</a>
+    <div class="card">Manage Users</div>
+    <div class="card">View Bookings</div>
+</div>
+
+
+<div class="content-wrapper">
+    <h2 class="page-title">Admin Dashboard</h2>
+
+    <div class="admin-stats">
+        <div class="stat-card">
+            <h3>{{ total_events }}</h3>
+            <p>Total Events</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>{{ total_users }}</h3>
+            <p>Total Users</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>{{ total_bookings }}</h3>
+            <p>Total Bookings</p>
+        </div>
+    </div>
+
+    <div class="admin-actions">
+        <a href="/create-event" class="admin-btn">Create Event</a>
+        <a href="/events" class="admin-btn secondary">View Events</a>
+    </div>
+</div>
+
+{% endblock %}
+
+
+</body>
+</html>

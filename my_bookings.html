@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>My Bookings</title>
+</head>
+<body>
+    <body class="bg-dashboard">
+
+{% extends "base.html" %}
+{% block title %}My Bookings{% endblock %}
+
+{% block content %}
+
+<div class="content-wrapper">
+    <h2 class="page-title">My Booked Events</h2>
+
+    {% if bookings %}
+        <div class="booking-list">
+            {% for booking in bookings %}
+                <div class="booking-card">
+                    <h3>{{ booking.title }}</h3>
+
+                    <div class="booking-meta">
+                        <span><strong>Date:</strong> {{ booking.date }}</span>
+                        <span><strong>Venue:</strong> {{ booking.venue }}</span>
+                    </div>
+
+                    <div class="booking-status">
+                        <span class="status confirmed">Confirmed</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <p>You have not booked any events yet.</p>
+            <a href="/events" class="book-btn">Browse Events</a>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+
+</body>
+</html>

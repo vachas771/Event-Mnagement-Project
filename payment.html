@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Payment</title>
+</head>
+<body>
+    <body class="bg-payment">
+
+
+{% extends "base.html" %}
+{% block title %}Payment{% endblock %}
+
+{% block content %}
+
+<div class="payment-wrapper">
+    <div class="payment-card">
+        <h2>Payment Confirmation</h2>
+
+        <div class="payment-details">
+            <p><span>Event</span><strong>{{ event.title }}</strong></p>
+            <p><span>Venue</span><strong>{{ event.venue }}</strong></p>
+            <p><span>Amount</span><strong class="amount">₹{{ event.price }}</strong></p>
+        </div>
+
+        <form method="POST" action="/confirm-booking/{{ event.id }}">
+            <button type="submit" class="pay-btn">Confirm Payment</button>
+        </form>
+
+        <p class="payment-note">
+            *This is a demo payment for academic project*
+        </p>
+    </div>
+</div>
+
+{% endblock %}
+
+
+</body>
+</html>

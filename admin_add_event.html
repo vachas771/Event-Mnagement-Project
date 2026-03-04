@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="container">
+    <form class="event-form" method="post">
+        <h2>Add Event</h2>
+
+        <input type="text" name="title" placeholder="Event Title" required>
+
+        <textarea name="description" placeholder="Event Description"></textarea>
+
+        <input type="date" name="date" required>
+
+        <input type="text" name="venue" placeholder="Venue" required>
+
+        <input type="number" name="price" placeholder="Price" min="0" required>
+
+        <button type="submit">Add Event</button>
+    </form>
+</div>
+
+</body>
+</html>

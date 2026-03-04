@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>{% block title %}Event Management{% endblock %}</title>
+    <style>
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+
+<nav class="navbar">
+
+
+    <div class="nav-left">
+        <span class="logo">🎟 Eventify</span>
+    </div>
+
+    <ul class="nav-links">
+        {% if session.get("role") == "admin" %}
+        <li><a href="/admin_dashboard">Admin Dashboard</a></li>
+        {% endif %}
+        <li><a href="/events" class="active">Events</a></li>
+        <li><a href="/my-bookings">My Bookings</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+
+<hr>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

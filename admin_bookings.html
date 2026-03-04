@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bookings</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+{% if session.get("user_id") %}
+    <a href="/logout">Logout</a>
+{% endif %}
+
+<h2 style="text-align:center;">User Bookings</h2>
+
+<table border="1" cellpadding="10" align="center">
+<tr>
+    <th>User</th>
+    <th>Event</th>
+    <th>Date</th>
+</tr>
+{% for b in bookings %}
+<tr>
+    <td>{{ b[0] }}</td>
+    <td>{{ b[1] }}</td>
+    <td>{{ b[2] }}</td>
+</tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
